@@ -56,7 +56,7 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-    def Panzica(self):
+    def panzica(self):
       print ("this is for testing")
       
     def dance(self):
