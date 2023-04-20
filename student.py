@@ -56,12 +56,12 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
-    def panzica(self):
-      print ("this is for testing")
-      print ("round 2! fight!")
-      self.right(primary=50, counter=50)
-      time.sleep(2)
-      self.stop()
+  def panzica(self):
+    print ("this is for testing")
+    print ("round 2! fight!")
+    self.right(primary=50, counter=50)
+    time.sleep(2)
+    self.stop()
     
   def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
