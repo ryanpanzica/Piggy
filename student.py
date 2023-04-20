@@ -58,6 +58,7 @@ class Piggy(PiggyParent):
     '''
     def panzica(self):
       print ("this is for testing")
+      print ("round 2! fight!")
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
