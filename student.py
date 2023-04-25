@@ -17,16 +17,16 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_SPEED = 80
-        self.RIGHT_SPEED = 80
+        self.LEFT_DEFAULT = 80
+        self.RIGHT_DEFAULT = 80
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
         
     def load_defaults(self):
         """Implements the magic numbers defined in constructor"""
-        self.set_motor_limits(self.MOTOR_LEFT, self.LEFT_SPEED)
-        self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_SPEED)
+        self.set_motor_limits(self.MOTOR_LEFT, self.DEFAULT)
+        self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
         self.set_servo(self.SERVO_1, self.MIDPOINT)
         
     def menu(self):
