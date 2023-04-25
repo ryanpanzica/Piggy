@@ -59,14 +59,14 @@ class Piggy(PiggyParent):
     def panzica(self):
       print ("this is for testing")
       print ("round 2! fight!")
-      for x in range(2):
+      for x in range(4):
         
         self.fwd()
         time.sleep(2)
         self.stop()
   
         self.right()
-        time.sleep(2)
+        time.sleep(1)
         self.stop()
       
     def dance(self):
