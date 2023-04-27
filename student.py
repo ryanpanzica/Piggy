@@ -93,9 +93,9 @@ class Piggy(PiggyParent):
           
         for value in self.scan_data:
           if value < 300:
-          return False
-        else 
-          return True
+            return False
+          else 
+            return True
       
 
     def shake(self):
