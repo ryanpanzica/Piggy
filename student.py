@@ -90,11 +90,10 @@ class Piggy(PiggyParent):
           self.scan()
           self.right(0.85)
           print (self.scan_data)
-          
         for value in self.scan_data:
           if value < 300:
             return False
-          else 
+          else:
             return True
       
 
