@@ -72,7 +72,7 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
-        self.scan()
+        print (self.scan())
         if self.safe_to_dance():
           print ("safe to dance")
           
