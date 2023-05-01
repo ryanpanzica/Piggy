@@ -88,7 +88,7 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         for x in range(4):
           self.scan()
-          self.turn_to_deg(90)
+          self.turn_by_deg(90)
         print (self.scan_data)
         for value in self.scan_data:
           if value < 300:
