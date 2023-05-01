@@ -88,6 +88,8 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         for x in range(4):
           self.scan()
+          self.sleep(2)
+          self.stop()
           self.right(0.85)
           print (self.scan_data)
         for value in self.scan_data:
