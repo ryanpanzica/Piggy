@@ -155,7 +155,9 @@ if __name__ == "__main__":  # only run this loop if this is the main file
         p.quit()  
 
       def wall(self):
+        
         while True:
+          self.fwd()
             for ang in range(self.MIDPOINT-400, self.MIDPOINT+401, 100):
                 self.servo(ang)
                 time.sleep(.1)
