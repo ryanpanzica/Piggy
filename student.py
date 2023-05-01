@@ -96,7 +96,15 @@ class Piggy(PiggyParent):
             return False
           else:
             return True
-      
+    def wall(self):
+        
+        while True:
+          self.fwd()
+          for ang in range(self.MIDPOINT-400, self.MIDPOINT+401, 100):
+            self.servo(ang)
+            time.sleep(.1)
+            if self.read_distance() < 250:
+              self.stop()
 
     def shake(self):
         """ Another example move """
@@ -155,12 +163,4 @@ if __name__ == "__main__":  # only run this loop if this is the main file
     except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
         p.quit()  
 
-    def wall(self):
-        
-        while True:
-          self.fwd()
-          for ang in range(self.MIDPOINT-400, self.MIDPOINT+401, 100):
-            self.servo(ang)
-            time.sleep(.1)
-            if self.read_distance() < 250:
-              self.stop()
+    
