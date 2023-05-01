@@ -86,7 +86,9 @@ class Piggy(PiggyParent):
           self.stop()
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        self.scan()
+        for x in range(4):
+          self.scan()
+          self.turn_to_deg(90)
         print (self.scan_data)
         for value in self.scan_data:
           if value < 300:
@@ -111,7 +113,7 @@ class Piggy(PiggyParent):
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
-        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 10):
+        for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 25):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
 
