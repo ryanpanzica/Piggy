@@ -97,10 +97,9 @@ class Piggy(PiggyParent):
           else:
             return True
     def wall(self):
-        
         while True:
           self.fwd()
-          for ang in range(self.MIDPOINT-400, self.MIDPOINT+401):
+          for ang in range(self.MIDPOINT, self.MIDPOINT):
             self.servo(ang)
             time.sleep(.1)
             if self.read_distance() < 250:
