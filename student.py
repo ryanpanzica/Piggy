@@ -18,7 +18,7 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 77
+        self.RIGHT_DEFAULT = 80
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
@@ -57,13 +57,21 @@ class Piggy(PiggyParent):
     STUDENT PROJECTS
     ****************
     '''
+    
+    def g_fwd (self, amount):
+      start_time = time.time()
+      start_heading = self.get_heading()
+      while time.time() < start_time + amount:
+        turn = self.get_heading() - start_heading
+        self.fwd(left = 50 - turn, right = 50 + turn)
+      self.stop()
+      
     def panzica(self):
       print ("this is for testing")
       print ("round 2! fight!")
       for x in range(4):
         
-        self.fwd()
-        time.sleep(2)
+        self.g_fwd(2)
         self.stop()
   
         self.right()
@@ -74,8 +82,7 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         if self.safe_to_dance():
-          self.fwd()
-          time.sleep(2)
+          self.g_fwd(2)
           self.stop()
           
           self.right()
@@ -85,6 +92,7 @@ class Piggy(PiggyParent):
           self.left()
           time.sleep(2)
           self.stop()
+    
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         for x in range(4):
