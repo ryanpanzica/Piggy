@@ -98,7 +98,7 @@ class Piggy(PiggyParent):
         for x in range(4):
           self.scan()
           self.turn_by_deg(90)
-        print (self.scan_data)
+          print (self.scan_data)
         for value in self.scan_data:
           if value < 300:
             return False
