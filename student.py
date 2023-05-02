@@ -63,7 +63,7 @@ class Piggy(PiggyParent):
       start_heading = self.get_heading()
       while time.time() < start_time + amount:
         turn = self.get_heading() - start_heading
-        self.fwd(left = 50 - turn, right = 50 + turn)
+        self.fwd(left = 80 - turn, right = 80 + turn)
       self.stop()
       
     def panzica(self):
@@ -113,7 +113,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 250:
           self.stop()
-          pass
+          break
 
     def shake(self):
         """ Another example move """
