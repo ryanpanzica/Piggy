@@ -58,7 +58,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     
-    def g_fwd (self, amount):
+    def g_fwd (self, amount = 5):
       start_time = time.time()
       start_heading = self.get_heading()
       while time.time() < start_time + amount:
