@@ -18,7 +18,7 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
-        self.RIGHT_DEFAULT = 80
+        self.RIGHT_DEFAULT = 77
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
@@ -96,13 +96,15 @@ class Piggy(PiggyParent):
             return False
           else:
             return True
+    
     def wall(self):
-        while True:
-          self.fwd()
-          self.servo(self.MIDPOINT)
-          time.sleep(.1)
-          if self.read_distance() < 250:
-            self.stop()
+      while True:
+        self.fwd()
+        self.servo(self.MIDPOINT)
+        time.sleep(.1)
+        self.read_distance()
+        if self.read_distance() < 250:
+          self.stop()
 
     def shake(self):
         """ Another example move """
