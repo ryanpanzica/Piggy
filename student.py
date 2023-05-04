@@ -100,11 +100,11 @@ class Piggy(PiggyParent):
           self.scan()
           self.turn_by_deg(90)
           print (self.scan_data)
-          for value in self.scan_data:
-            if value < 300:
-              return False
-            else:
-              return True
+        for value in self.scan_data:
+          if value < 300:
+            return False
+          else:
+            return True
     
     def wall(self):
       while True:
@@ -114,7 +114,8 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 250:
           self.stop()
-          break
+          self.turn_by_degree(180)
+          
 
     def shake(self):
         """ Another example move """
