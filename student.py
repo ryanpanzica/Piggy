@@ -41,7 +41,7 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "p": ("panzica", self.panzica),
+                "sq": ("square", self.square),
                 "w": ("wall", self.wall)
                 }
         # loop and print the menu...
@@ -66,12 +66,13 @@ class Piggy(PiggyParent):
         self.fwd(left = 80 - turn, right = 80 + turn)
       self.stop()
       
-    def panzica(self):
+    def square(self):
       print ("this is for testing")
       print ("round 2! fight!")
       for x in range(4):
         
-        self.g_fwd(2)
+        self.fwd()
+        time.sleep(2)
         self.stop()
   
         self.right()
@@ -99,11 +100,11 @@ class Piggy(PiggyParent):
           self.scan()
           self.turn_by_deg(90)
           print (self.scan_data)
-        for value in self.scan_data:
-          if value < 300:
-            return False
-          else:
-            return True
+          for value in self.scan_data:
+            if value < 300:
+              return False
+            else:
+              return True
     
     def wall(self):
       while True:
