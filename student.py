@@ -99,8 +99,8 @@ class Piggy(PiggyParent):
         for x in range(4):
           self.scan()
           self.turn_by_deg(90)
-          print (self.scan_data)
-        for value in self.scan_data:
+          print (self.read_distance())
+        for value in self.read_distance():
           if value < 300:
             print ("don't dance")
             return False
