@@ -102,8 +102,10 @@ class Piggy(PiggyParent):
           print (self.scan_data)
         for value in self.scan_data:
           if value < 300:
+            print ("don't dance")
             return False
           else:
+            print ("safe to dance")
             return True
     
     def wall(self):
