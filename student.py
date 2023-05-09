@@ -132,7 +132,7 @@ class Piggy(PiggyParent):
             self.fwd()
             time.sleep(3)
             self.stop()
-            break
+            
           elif right_distance > left_distance:
             self.turn_by_deg(90)
             self.fwd()
@@ -143,7 +143,7 @@ class Piggy(PiggyParent):
             self.fwd()
             time.sleep(3)
             self.stop()
-            break
+          break
             
     def shake(self):
         """ Another example move """
