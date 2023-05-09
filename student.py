@@ -144,11 +144,6 @@ class Piggy(PiggyParent):
             self.sleep(3)
             self.stop()
             
-          
-          
-          
-          for value in self.scan_data:
-
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
