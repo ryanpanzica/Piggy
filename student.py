@@ -67,17 +67,8 @@ class Piggy(PiggyParent):
       self.stop()
       
     def square(self):
-      print ("this is for testing")
-      print ("round 2! fight!")
-      for x in range(4):
-        
-        self.fwd()
-        time.sleep(2)
-        self.stop()
-  
-        self.right()
-        time.sleep(0.85)
-        self.stop()
+      self.scan()
+      print(self.scan_data)
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
@@ -116,7 +107,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 250:
           self.stop()
-          self.turn_by_deg(180)
+          self.turn_by_deg(175)
           
 
     def shake(self):
