@@ -89,15 +89,14 @@ class Piggy(PiggyParent):
         """ Does a 360 distance check and returns true if safe """
         for x in range(4):
           self.scan()
+          for value in self.scan_data: 
+            if self.scan_data[value] < 300:
+              print ("don't dance")
+              return False
           self.turn_by_deg(90)
-          print (self.read_distance())
-        for value in self.read_distance():
-          if value < 300:
-            print ("don't dance")
-            return False
-          else:
-            print ("safe to dance")
-            return True
+        
+        print ("safe to dance")
+        return True
     
     def wall(self):
       while True:
