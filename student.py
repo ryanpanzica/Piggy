@@ -111,7 +111,6 @@ class Piggy(PiggyParent):
           self.turn_by_deg(175)
 
     def box(self):
-      while True:
         self.fwd()
         self.servo(self.MIDPOINT)
         time.sleep(.1)
