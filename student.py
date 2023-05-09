@@ -115,7 +115,7 @@ class Piggy(PiggyParent):
         self.servo(self.MIDPOINT)
         time.sleep(.1)
         self.read_distance()
-        if self.read_distance() < 500:
+        if self.read_distance() < 250:
           self.servo(1150)
           right_distance = self.read_distance()
           self.servo(1825)
@@ -129,7 +129,7 @@ class Piggy(PiggyParent):
 
             self.turn_by_deg(90)
             self.fwd()
-            self.sleep(3)
+            time.sleep(3)
             self.stop()
 
           if right_distance > left_distance:
@@ -140,7 +140,7 @@ class Piggy(PiggyParent):
 
             self.turn_by_deg(-90)
             self.fwd()
-            self.sleep(3)
+            time.sleep(3)
             self.stop()
             
     def shake(self):
