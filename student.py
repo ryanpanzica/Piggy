@@ -144,6 +144,7 @@ class Piggy(PiggyParent):
             time.sleep(3)
             self.stop()
             break
+            
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
