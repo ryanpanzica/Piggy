@@ -42,7 +42,8 @@ class Piggy(PiggyParent):
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
                 "sq": ("square", self.square),
-                "w": ("wall", self.wall)
+                "w": ("wall", self.wall),
+                "b": ("box", self.box)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -74,7 +75,8 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         if self.safe_to_dance():
-          self.g_fwd(2)
+          self.fwd()
+          time.sleep(2)
           self.stop()
           
           self.right()
@@ -104,10 +106,48 @@ class Piggy(PiggyParent):
         self.servo(self.MIDPOINT)
         time.sleep(.1)
         self.read_distance()
-        if self.read_distance() < 250:
+        if self.read_distance() < 500:
           self.stop()
           self.turn_by_deg(175)
+
+    def box(self):
+      while True:
+        self.fwd()
+        self.servo(self.MIDPOINT)
+        time.sleep(.1)
+        self.read_distance()
+        if self.read_distance() < 500:
+          self.servo(1150)
+          right_distance = self.read_distance()
+          self.servo(1825)
+          left_distance = self.read_distance()
           
+          if left_distance > right_distance:
+            self.turn_by_degree(-90)
+            self.fwd()
+            time.sleep(3)
+            self.stop()
+
+            self.turn_by_deg(90)
+            self.fwd()
+            self.sleep(3)
+            self.stop()
+
+          if right_distance > left_distance:
+            self.turn_by_degree(90)
+            self.fwd()
+            time.sleep(3)
+            self.stop()
+
+            self.turn_by_deg(-90)
+            self.fwd()
+            self.sleep(3)
+            self.stop()
+            
+          
+          
+          
+          for value in self.scan_data:
 
     def shake(self):
         """ Another example move """
