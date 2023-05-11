@@ -128,7 +128,7 @@ class Piggy(PiggyParent):
             self.stop()
             
             self.fwd()
-            time.sleep(2)
+            time.sleep(1)
             self.stop()
 
             self.right()
@@ -136,7 +136,7 @@ class Piggy(PiggyParent):
             self.stop()
             
             self.fwd()
-            time.sleep(2)
+            time.sleep(1)
             self.stop()
             
           elif right_distance > left_distance:
@@ -145,7 +145,7 @@ class Piggy(PiggyParent):
             self.stop()
             
             self.fwd()
-            time.sleep(3)
+            time.sleep(1)
             self.stop()
 
             self.left()
@@ -153,7 +153,7 @@ class Piggy(PiggyParent):
             self.stop()
             
             self.fwd()
-            time.sleep(3)
+            time.sleep(1)
             self.stop()
           
             
