@@ -68,8 +68,7 @@ class Piggy(PiggyParent):
       self.stop()
       
     def square(self):
-      self.scan()
-      print(self.scan_data)
+      self.servo(800)
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
