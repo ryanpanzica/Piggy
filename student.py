@@ -123,27 +123,38 @@ class Piggy(PiggyParent):
           left_distance = self.read_distance()
           
           if left_distance > right_distance:
-            self.turn_by_deg(-90)
+            self.left()
+            time.sleep(0.85)
+            time.stop()
+            
             self.fwd()
-            time.sleep(3)
+            time.sleep(2)
             self.stop()
 
-            self.turn_by_deg(90)
+            self.right()
+            time.sleep(.85)
+            self.stop()
             self.fwd()
-            time.sleep(3)
+            time.sleep(2)
             self.stop()
             
           elif right_distance > left_distance:
-            self.turn_by_deg(90)
+            self.right()
+            time.sleep(0.85)
+            self.stop()
+            
             self.fwd()
             time.sleep(3)
             self.stop()
 
-            self.turn_by_deg(-90)
+            self.left()
+            time.sleeo(.85)
+            self.stop()
+            
             self.fwd()
             time.sleep(3)
             self.stop()
-          break
+          
             
     def shake(self):
         """ Another example move """
