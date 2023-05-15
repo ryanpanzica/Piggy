@@ -158,6 +158,8 @@ class Piggy(PiggyParent):
             self.stop()
           
     def box_swerve(self):
+      self.LEFT_DEFAULT = 40
+      self.RIGHT_DEFAULT = 40
       while True: 
         self.fwd()
         time.sleep(.1)
@@ -167,6 +169,13 @@ class Piggy(PiggyParent):
         r_distance = self.read_distance()
         self.servo(2200)
         l_distance = self.read_distance()
+
+        if c_distance or r_distance or l_distance < 500:
+          self.stop()
+          if l_distance > r_distance:
+            pass
+          if r_distance > l_distance:
+            pass
         
         
             
