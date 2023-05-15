@@ -173,9 +173,16 @@ class Piggy(PiggyParent):
         if c_distance or r_distance or l_distance < 500:
           self.stop()
           if l_distance > r_distance:
-            pass
+            self.fwd(left=10, right= 50)
+            time.sleep(1)
+            self.fwd(left=50, right=10)
+            time.sleep(.5)
+          
           if r_distance > l_distance:
-            pass
+            self.fwd(left=50, right= 10)
+            time.sleep(1)
+            self.fwd(left=10, right=50)
+            time.sleep(.5)
         
         
             
