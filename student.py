@@ -176,13 +176,13 @@ class Piggy(PiggyParent):
             self.fwd(left=10, right= 50)
             time.sleep(2)
             self.fwd(left=50, right=10)
-            time.sleep(1)
+            time.sleep(2)
           
           if r_distance > l_distance:
             self.fwd(left=50, right= 10)
             time.sleep(2)
             self.fwd(left=10, right=50)
-            time.sleep(1)
+            time.sleep(2)
         
         
             
