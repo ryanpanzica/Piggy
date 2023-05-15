@@ -156,6 +156,18 @@ class Piggy(PiggyParent):
             time.sleep(1)
             self.stop()
           
+    def box_swerve(self):
+      while True: 
+        self.fwd()
+        time.sleep(.1)
+        self.servo(self.MIDPOINT)
+        c_distance = self.read_distance()
+        self.servo(800)
+        r_distance = self.read_distance()
+        self.servo(2200)
+        l_distance = self.read_distance()
+        
+        
             
     def shake(self):
         """ Another example move """
