@@ -158,8 +158,8 @@ class Piggy(PiggyParent):
             self.stop()
           
     def box_swerve(self):
-      self.LEFT_DEFAULT = 40
-      self.RIGHT_DEFAULT = 40
+      self.LEFT_DEFAULT = 60
+      self.RIGHT_DEFAULT = 60
       while True: 
         self.fwd()
         time.sleep(.1)
