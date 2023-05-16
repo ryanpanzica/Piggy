@@ -203,12 +203,10 @@ class Piggy(PiggyParent):
           lt_distance = self.read_distance()
           
           if lt_distance > rt_distance:
-            self.left()
-            time.sleep(.85)
+            self.turn_by_deg(-85)
             self.stop()
           elif rt_distance > lt_distance:
-            self.right()
-            time.sleep(.85)
+            self.turn_by_deg(85)
             self.stop()
           
     def shake(self):
