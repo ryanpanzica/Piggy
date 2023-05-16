@@ -69,7 +69,7 @@ class Piggy(PiggyParent):
       self.stop()
       
     def square(self):
-      self.servo(2200)
+      self.servo(2500)
       
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
@@ -184,8 +184,27 @@ class Piggy(PiggyParent):
             self.fwd(left=20, right=50)
             time.sleep(2)
         
-        
-            
+    def maze_1(self):
+      while True: 
+        self.fwd()
+        self.servo(self.MIDPOINT)
+        time.sleep(.1)
+        self.read_distance()
+        if self.read_distance() < 250:
+          self.stop()
+          self.servo(800)
+          rt_distance = self.read_distance()
+          self.servo(2200)
+          lt_distance = self.read_distance()
+          
+        if lt_distance > rt_distance:
+          self.stop()
+          self.left(0.85)
+
+        if rt_distance > lt_distance:
+          self.stop()
+          self.right(0.85)
+          
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
