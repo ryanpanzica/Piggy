@@ -44,7 +44,8 @@ class Piggy(PiggyParent):
                 "sq": ("square", self.square),
                 "w": ("wall", self.wall),
                 "b": ("box", self.box),
-                "t": ("swerve box", self.box_swerve)
+                "t": ("swerve box", self.box_swerve),
+                "m": ("maze nav", self.maze_1)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -192,17 +193,15 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance() < 250:
           self.stop()
-          self.servo(800)
+          self.servo(500)
           rt_distance = self.read_distance()
-          self.servo(2200)
+          self.servo(2500)
           lt_distance = self.read_distance()
           
         if lt_distance > rt_distance:
-          self.stop()
           self.left(0.85)
 
-        if rt_distance > lt_distance:
-          self.stop()
+        elif rt_distance > lt_distance:
           self.right(0.85)
           
     def shake(self):
