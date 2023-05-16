@@ -167,8 +167,10 @@ class Piggy(PiggyParent):
         self.servo(self.MIDPOINT)
         c_distance = self.read_distance()
         self.servo(800)
+        time.sleep(.3)
         r_distance = self.read_distance()
         self.servo(2200)
+        time.sleep(.3)
         l_distance = self.read_distance()
 
         if c_distance < 300 or r_distance < 300 or l_distance < 300:
@@ -194,15 +196,20 @@ class Piggy(PiggyParent):
         if self.read_distance() < 250:
           self.stop()
           self.servo(500)
+          time.sleep(.3)
           rt_distance = self.read_distance()
           self.servo(2500)
+          time.sleep(.3)
           lt_distance = self.read_distance()
           
         if lt_distance > rt_distance:
-          self.left(0.85)
-
+          self.left()
+          time.sleep(.85)
+          self.stop()
         elif rt_distance > lt_distance:
-          self.right(0.85)
+          self.right()
+          time.sleep(.85)
+          self.stop()
           
     def shake(self):
         """ Another example move """
