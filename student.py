@@ -188,6 +188,8 @@ class Piggy(PiggyParent):
             time.sleep(2)
         
     def maze_1(self):
+      self.LEFT_DEFAULT = 60
+      self.RIGHT_DEFAULT = 60
       while True:
         self.fwd()
         self.servo(self.MIDPOINT)
@@ -203,10 +205,10 @@ class Piggy(PiggyParent):
           lt_distance = self.read_distance()
           
           if lt_distance > rt_distance:
-            self.turn_by_deg(-85)
+            self.turn_by_deg(-82)
             self.stop()
           elif rt_distance > lt_distance:
-            self.turn_by_deg(85)
+            self.turn_by_deg(82)
             self.stop()
           
     def shake(self):
