@@ -162,8 +162,7 @@ class Piggy(PiggyParent):
       self.LEFT_DEFAULT = 60
       self.RIGHT_DEFAULT = 60
       while True: 
-        self.fwd()
-        time.sleep(.1)
+        self.g_fwd(.1)
         self.servo(self.MIDPOINT)
         c_distance = self.read_distance()
         self.servo(800)
