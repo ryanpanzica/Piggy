@@ -17,7 +17,7 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 80
+        self.LEFT_DEFAULT = 79.5
         self.RIGHT_DEFAULT = 80
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -188,7 +188,7 @@ class Piggy(PiggyParent):
             time.sleep(2)
         
     def maze_1(self):
-      self.LEFT_DEFAULT = 60
+      self.LEFT_DEFAULT = 59.5
       self.RIGHT_DEFAULT = 60
       while True:
         self.fwd()
