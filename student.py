@@ -187,7 +187,7 @@ class Piggy(PiggyParent):
             time.sleep(2)
         
     def maze_1(self):
-      self.LEFT_DEFAULT = 60
+      self.LEFT_DEFAULT = 59.5
       self.RIGHT_DEFAULT = 60
       
       while True:
