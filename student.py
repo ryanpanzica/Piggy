@@ -205,7 +205,7 @@ class Piggy(PiggyParent):
           lt_distance = self.read_distance()
           
           if lt_distance > rt_distance:
-            self.turn_by_deg(-72)
+            self.turn_by_deg(-70)
             self.stop()
           elif rt_distance > lt_distance:
             self.turn_by_deg(75)
